@@ -1,0 +1,37 @@
+    //Create your function with the name shuffle.
+    //It should return a function when call should give the shuffled array.
+    //Do not modify the anything in the starter code.
+function main() {
+
+  const Subject1 = [
+      "Question1",
+      "Question2",
+      "Question3",
+      "Question4",
+      "Question5"
+    ];
+    //Write your function here
+    function shuffle(array){
+        return function(){
+            const sarray = [...array];
+            
+            for(let i=sarray.length-1;i>0;i--){
+                let index = Math.floor(Math.random() * i);
+                
+                let temp = sarray[i];
+                sarray[i] = sarray[index];
+                sarray[index] = temp;
+            }
+            return sarray;
+        };
+    }
+    
+    
+    const func = shuffle(Subject1);
+    console.log(func());
+    return shuffle;
+  }
+main();
+  
+
+
