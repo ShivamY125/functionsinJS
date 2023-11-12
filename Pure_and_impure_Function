@@ -1,0 +1,11 @@
+//Refactor the given impure function to pure function.
+function removeVowels(obj) {
+  let out = obj.value.replace(/[aeiou]/gi, "");
+    return out;
+}
+
+let strObj = { value: "Hello World" };
+// For pure function
+let newObj = removeVowels(strObj);
+// removeVowels(strObj);
+console.log(newObj.value);
