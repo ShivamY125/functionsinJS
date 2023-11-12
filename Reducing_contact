@@ -1,0 +1,23 @@
+ const contacts = [
+    { name: "Alice", company: "ABC Inc." },
+    { name: "Bob", company: "XYZ Corp." },
+    { name: "Charlie", company: "ABC Inc." }
+  ];
+  function mapContactsToCompanies(contacts) {
+     
+      const tocompanies = contacts.reduce((acc,cur)=>{
+           const {name,company} =cur;
+          if(!acc[company]){
+              acc[company] = [name];
+          }else{
+           acc[company].push(name);
+         
+          }
+          
+          return acc;
+      },{});
+      return tocompanies;
+  }
+  
+const output =  mapContactsToCompanies(contacts);
+console.log(output);
